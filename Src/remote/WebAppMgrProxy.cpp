@@ -877,6 +877,16 @@ void WebAppMgrProxy::emitSelectAll( Window *win )
 	sendAsyncMessage(new View_SelectAll(static_cast<HostWindow*>(win)->routingId()));
 }
 
+void WebAppMgrProxy::emitMagnifyCursor( Window *win )
+{
+    if(!win->isIpcWindow()) {
+        g_debug("%s (%d): Invoked for a non-IPC Window.", __PRETTY_FUNCTION__, __LINE__);
+        return;
+    } 
+    g_debug("%s: sendAsyncMessage for WebAppMgrProxy::emitMagnifyCursor", __PRETTY_FUNCTION__);
+    sendAsyncMessage(new View_MagnifyCursor(static_cast<HostWindow*>(win)->routingId()));
+}
+
 void WebAppMgrProxy::notifyCompassEnabled(bool enabled)
 {
 	//sendAsyncMessage(new View_Mgr_NotifyCompassEnabled(enabled));

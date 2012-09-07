@@ -176,6 +176,7 @@ void SystemUiController::init()
 	connect(metaKeyMgr, SIGNAL(signalCut()), this, SLOT(slotCut()));
 	connect(metaKeyMgr, SIGNAL(signalPaste()), this, SLOT(slotPaste()));
 	connect(metaKeyMgr, SIGNAL(signalSelectAll()), this, SLOT(slotSelectAll()));
+	connect(metaKeyMgr, SIGNAL(signalMagnifyCursor()), this, SLOT(slotMagnifyCursor()));
 
 	SystemService* ss = SystemService::instance();
 
@@ -1720,6 +1721,12 @@ void SystemUiController::slotPaste()
 void SystemUiController::slotSelectAll()
 {
 	WebAppMgrProxy::instance()->emitSelectAll( SystemUiController::instance()->activeWindow() );
+}
+
+void SystemUiController::slotMagnifyCursor()
+{
+    g_debug("SystemUiController::slotMagnifyCursor()");
+    WebAppMgrProxy::instance()->emitMagnifyCursor( SystemUiController::instance()->activeWindow() );
 }
 
 void SystemUiController::hideStatusBarAndNotificationArea()

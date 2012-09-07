@@ -112,7 +112,8 @@ public:
 	void emitCut(Window *win);
 	void emitPaste(Window *win);
 	void emitSelectAll(Window *win);
-	
+    void emitMagnifyCursor(Window *win);
+    
 	void suspendWebKitProcess();
 	void resumeWebKitProcess();
 	

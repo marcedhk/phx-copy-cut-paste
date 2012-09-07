@@ -42,6 +42,7 @@ Q_SIGNALS:
 	void signalCut();
 	void signalPaste();
 	void signalSelectAll();
+	void signalMagnifyCursor();
 };
 
 

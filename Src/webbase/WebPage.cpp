@@ -1054,9 +1054,14 @@ std::string WebPage::name() const
     return m_name;
 }
 
+void WebPage::showMagnifyCursor()
+{
+    WebAppManager::instance()->showMagnifyCursor(appId());
+}
+
 void WebPage::copiedToClipboard()
 {
-	WebAppManager::instance()->copiedToClipboard(appId());
+    WebAppManager::instance()->copiedToClipboard(appId());
 }
 
 void WebPage::pastedFromClipboard()

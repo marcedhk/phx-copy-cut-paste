@@ -191,15 +191,24 @@ public:
 	 * @return				Handle to the statistics service.
 	 */
 	LSHandle* getStatsServiceHandle() const;
-	
-	/**
-	 * Adds a banner to indicate that text has been copied to the clipboard
-	 * 
-	 * @todo Document this more fully once BannerMessageEvent and BannerMessageEventFactory are documented
-	 * 
-	 * @param	appId			App ID of the app that copied text to the clipboard.
-	 */
-	void copiedToClipboard(const std::string& appId);
+    
+    /**
+     * Adds a banner to indicate that the cursor is in magnify mode
+     * 
+     * @todo Realistically this function is to demonstrate the "CTL+M" keys without having to be looking at the logs
+     * 
+     * @param   appId           App ID of the app that copied text to the clipboard.
+     */
+    void showMagnifyCursor(const std::string& appId);
+        
+    /**
+     * Adds a banner to indicate that text has been copied to the clipboard
+     * 
+     * @todo Document this more fully once BannerMessageEvent and BannerMessageEventFactory are documented
+     * 
+     * @param   appId           App ID of the app that copied text to the clipboard.
+     */
+    void copiedToClipboard(const std::string& appId);
 	
 	/**
 	 * Doesn't do anything

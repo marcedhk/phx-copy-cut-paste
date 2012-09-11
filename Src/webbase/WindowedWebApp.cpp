@@ -46,7 +46,7 @@
 #include "WindowMetaData.h"
 #include "DeviceInfo.h"
 
-#define MESSAGES_INTERNAL_FILE "SysMgrMessagesInternal.h"
+#define MESSAGES_INTERNAL_FILE "SysMgrMessagesInternalCustom.h"
 #include <PIpcMessageMacros.h>
 
 static const int kShowWindowTimeoutMs = 3000;

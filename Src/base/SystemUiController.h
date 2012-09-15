@@ -395,6 +395,7 @@ private Q_SLOTS:
 	void slotCut();
 	void slotPaste();
 	void slotSelectAll();
+    void slotMagnifyCursor();
 
 	void slotAnimFinished();
 

@@ -194,6 +194,7 @@ void WindowedWebApp::onMessageReceived(const PIpcMessage& msg)
 		IPC_MESSAGE_HANDLER(View_ClipboardEvent_Copy, onClipboardEvent_Copy)
 		IPC_MESSAGE_HANDLER(View_ClipboardEvent_Paste, onClipboardEvent_Paste)
         IPC_MESSAGE_HANDLER(View_SelectAll, onSelectAll)
+        IPC_MESSAGE_HANDLER(View_MagnifyCursor, onMagnifyCursor)
 		IPC_MESSAGE_HANDLER(View_Flip, onFlip)
 		IPC_MESSAGE_HANDLER(View_AsyncFlip, onAsyncFlip)
 		IPC_MESSAGE_HANDLER(View_AdjustForPositiveSpace, onAdjustForPositiveSpace)
@@ -307,6 +308,11 @@ void WindowedWebApp::onClipboardEvent_Paste()
 void WindowedWebApp::onSelectAll()
 {
 	page()->selectAll();
+}
+
+void WindowedWebApp::onMagnifyCursor()
+{
+    g_debug("DEBUG WindowedWebApp::onMagnifyCursor()");
 }
 
 void WindowedWebApp::onSetComposingText(const std::string& text)

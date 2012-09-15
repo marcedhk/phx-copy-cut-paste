@@ -1719,7 +1719,13 @@ void SystemUiController::slotPaste()
 
 void SystemUiController::slotSelectAll()
 {
-	WebAppMgrProxy::instance()->emitSelectAll( SystemUiController::instance()->activeWindow() );
+    WebAppMgrProxy::instance()->emitSelectAll( SystemUiController::instance()->activeWindow() );
+}
+
+void SystemUiController::slotMagnifyCursor()
+{
+    g_debug("SystemUiController::slotMagnifyCursor");
+    //TOPDO PLC WebAppMgrProxy::instance()->emitMagnifyCursor( SystemUiController::instance()->activeWindow() );
 }
 
 void SystemUiController::hideStatusBarAndNotificationArea()

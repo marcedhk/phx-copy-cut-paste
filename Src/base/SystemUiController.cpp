@@ -176,6 +176,7 @@ void SystemUiController::init()
 	connect(metaKeyMgr, SIGNAL(signalCut()), this, SLOT(slotCut()));
 	connect(metaKeyMgr, SIGNAL(signalPaste()), this, SLOT(slotPaste()));
 	connect(metaKeyMgr, SIGNAL(signalSelectAll()), this, SLOT(slotSelectAll()));
+	connect(metaKeyMgr, SIGNAL(signalMagnifyCursor()), this, SLOT(slotMagnifyCursor()));
 
 	SystemService* ss = SystemService::instance();
 

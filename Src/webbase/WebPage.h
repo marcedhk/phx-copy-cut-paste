@@ -537,6 +537,8 @@ private:
 	virtual void pluginFullscreenSpotlightCreate(int, int, int, int, int) {}
 	virtual void pluginFullscreenSpotlightRemove() {}
 
+	virtual void showMagnifyCursor();
+	
 	virtual void copiedToClipboard();
 	virtual void pastedFromClipboard();
 

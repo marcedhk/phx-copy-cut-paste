@@ -1972,6 +1972,24 @@ Done:
 	return true;
 }
 
+void WebAppManager::showMagnifyCursor(const std::string& appId)
+{
+    if (!s_lastCopyClipboardMessageId.empty()) {
+        BannerMessageEvent* e = BannerMessageEventFactory::createRemoveMessageEvent(appId,
+                                                                             s_lastCopyClipboardMessageId);
+        sendAsyncMessage(new ViewHost_BannerMessageEvent(BannerMessageEventWrapper(e)));
+    }
+
+    std::string nullString;
+    BannerMessageEvent* e = BannerMessageEventFactory::createAddMessageEvent(appId,
+                                                                             LOCALIZED("Magnify Cursor"),
+                                                                             "{ }", nullString, nullString,
+                                                                             nullString, -1, false);
+    sendAsyncMessage(new ViewHost_BannerMessageEvent(BannerMessageEventWrapper(e)));
+
+    s_lastCopyClipboardMessageId = e->msgId;
+}
+
 void WebAppManager::copiedToClipboard(const std::string& appId)
 {
 	if (!s_lastCopyClipboardMessageId.empty()) {

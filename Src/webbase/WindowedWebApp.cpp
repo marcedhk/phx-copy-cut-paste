@@ -46,7 +46,7 @@
 #include "WindowMetaData.h"
 #include "DeviceInfo.h"
 
-#define MESSAGES_INTERNAL_FILE "SysMgrMessagesInternal.h"
+#define MESSAGES_INTERNAL_FILE "SysMgrMessagesInternalCustom.h"
 #include <PIpcMessageMacros.h>
 
 static const int kShowWindowTimeoutMs = 3000;
@@ -192,7 +192,7 @@ void WindowedWebApp::onMessageReceived(const PIpcMessage& msg)
 		IPC_MESSAGE_HANDLER(View_SceneTransitionFinished, onSceneTransitionFinished)
 		IPC_MESSAGE_HANDLER(View_ClipboardEvent_Cut, onClipboardEvent_Cut)
 		IPC_MESSAGE_HANDLER(View_ClipboardEvent_Copy, onClipboardEvent_Copy)
-		IPC_MESSAGE_HANDLER(View_ClipboardEvent_Paste, onClipboardEvent_Paste)
+        IPC_MESSAGE_HANDLER(View_ClipboardEvent_Paste, onClipboardEvent_Paste)
         IPC_MESSAGE_HANDLER(View_SelectAll, onSelectAll)
         IPC_MESSAGE_HANDLER(View_MagnifyCursor, onMagnifyCursor)
 		IPC_MESSAGE_HANDLER(View_Flip, onFlip)
@@ -302,7 +302,7 @@ void WindowedWebApp::onClipboardEvent_Copy()
 
 void WindowedWebApp::onClipboardEvent_Paste()
 {
-	page()->paste();
+    page()->paste();
 }
 
 void WindowedWebApp::onSelectAll()

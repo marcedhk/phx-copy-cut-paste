@@ -877,6 +877,7 @@ void WebAppMgrProxy::emitSelectAll( Window *win )
 	sendAsyncMessage(new View_SelectAll(static_cast<HostWindow*>(win)->routingId()));
 }
 
+
 /*TODO PLC
 void WebAppMgrProxy::emitMagnifyCursor( Window *win )
 {

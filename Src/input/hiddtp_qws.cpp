@@ -637,7 +637,8 @@ void QWSHiddTpHandlerPrivate::generateTouchEvent()
 					if (((currTime - m_mousePressTime) < (uint32_t) QApplication::doubleClickInterval()) &&
 						((dx * dx + dy * dy) <= Settings::LunaSettings()->tapRadiusSquared)) {
 
-						//printf("Mouse Double Click: %d, %d\n", mousePos.x(), mousePos.y());
+                        g_debug("Phoenix QWSHiddTpHandlerPrivate::generateTouchEvent double click");
+						printf("Mouse Double Click: %d, %d\n", mousePos.x(), mousePos.y());
 						QMouseEvent ev(QEvent::MouseButtonDblClick, mousePos, mousePos,
 									   Qt::LeftButton, Qt::LeftButton, keyboardModifiers);
 						qt_sendSpontaneousEvent((QObject*) widget, &ev);
@@ -645,7 +646,6 @@ void QWSHiddTpHandlerPrivate::generateTouchEvent()
 						m_mousePressTime = 0;
 					}
 					else {
-
 						//printf("Mouse Down: %d, %d\n", mousePos.x(), mousePos.y());
 						QMouseEvent ev(QEvent::MouseButtonPress, mousePos, mousePos,
 									   Qt::LeftButton, Qt::LeftButton, keyboardModifiers);

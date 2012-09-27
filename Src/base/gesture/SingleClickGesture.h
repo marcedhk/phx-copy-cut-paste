@@ -41,7 +41,6 @@ public:
 	    , m_modifiers (0)
             {
 	        m_timerValue = Settings::LunaSettings()->tapDoubleClickDuration;
-	        g_debug("DEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUGDEBUG SingleClickGesture");
 		if (m_timerValue <= 0)
 		    m_timerValue = 300;
 	    }

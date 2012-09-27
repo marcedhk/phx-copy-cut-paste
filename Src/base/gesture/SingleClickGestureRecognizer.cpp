@@ -62,12 +62,14 @@ QGestureRecognizer::Result SingleClickGestureRecognizer::recognize (QGesture* ge
 	    }
 	    // if finger down at the same location for longer than the timer, 
 	    // the single tap has to be triggered after the release
+	    g_clickCount++;
 	}
 	return result;
     }
     
     switch (event->type()) {
 	case QEvent::TouchBegin:
+        g_clickCount++;
 	case QEvent::TouchUpdate:
 	case QEvent::TouchEnd:
 	    {
@@ -80,6 +82,7 @@ QGestureRecognizer::Result SingleClickGestureRecognizer::recognize (QGesture* ge
     			singleClickGesture->m_triggerSingleClickOnRelease = false;
     			singleClickGesture->stopSingleClickTimer();
     			result = QGestureRecognizer::CancelGesture;
+    			g_clickCount = 0;
 		    }
 		}
 		break;
@@ -96,7 +99,6 @@ QGestureRecognizer::Result SingleClickGestureRecognizer::recognize (QGesture* ge
 		singleClickGesture->m_modifiers = mouseEvent->modifiers();
 		result = QGestureRecognizer::TriggerGesture;
 		singleClickGesture->startSingleClickTimer();
-		g_clickCount++;
 		break;
 	    }
 

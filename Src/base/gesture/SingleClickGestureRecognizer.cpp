@@ -77,10 +77,9 @@ QGestureRecognizer::Result SingleClickGestureRecognizer::recognize (QGesture* ge
 		    QTouchEvent* touchEvent = static_cast<const QTouchEvent *>(event);
 		    // this starts the gesture, so dont check existing state
 		    if (touchEvent->touchPoints().size() > 1) {
-			singleClickGesture->m_triggerSingleClickOnRelease = false;
-			singleClickGesture->stopSingleClickTimer();
-			result = QGestureRecognizer::CancelGesture;
-			g_clickCount = 0;
+    			singleClickGesture->m_triggerSingleClickOnRelease = false;
+    			singleClickGesture->stopSingleClickTimer();
+    			result = QGestureRecognizer::CancelGesture;
 		    }
 		}
 		break;
@@ -123,8 +122,8 @@ QGestureRecognizer::Result SingleClickGestureRecognizer::recognize (QGesture* ge
 		    || singleClickGesture->state() == Qt::GestureUpdated) {
 		    singleClickGesture->m_mouseDown = false;
 		    if (singleClickGesture->m_triggerSingleClickOnRelease)  {
-			result = QGestureRecognizer::FinishGesture;
-			singleClickGesture->m_triggerSingleClickOnRelease = false;
+    			result = QGestureRecognizer::FinishGesture;
+    			singleClickGesture->m_triggerSingleClickOnRelease = false;
 		    }
 	    }
 
@@ -141,8 +140,8 @@ QGestureRecognizer::Result SingleClickGestureRecognizer::recognize (QGesture* ge
         	singleClickGesture->stopSingleClickTimer();
         	singleClickGesture->m_triggerSingleClickOnRelease = false;
         	result = QGestureRecognizer::CancelGesture;
-        	g_clickCount = 0;
             g_debug("Phoenix SingleClickGestureRecognizer double click %d", g_clickCount);
+        	g_clickCount = 0;
         }
         break;
 
